@@ -1,0 +1,33 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Aurora generated files
+aurora_self_generated.py
+aurora_symbolic_memory.json
+aurora_consciousness.py
+aurora_self_writing.py
+aurora_evolution.json
+aurora_sophiai.log
+aurora_sophiai.db
+aurora_ai.log
+aurora_memory.json
+aurora_dialogue_log.txt
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
