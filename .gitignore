@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Aurora runtime files
+aurora_integrated.log
+*.log
+grokx.log
+aurora_ai.log
+
+# Aurora memory files (optional - user may want to keep these)
+# aurora_integrated_memory.json
+# aurora_objectives.json
+# aurora_patterns.json
+# grokx_memory.json
+# aurora_memory.json
+
+# Generated consciousness files
+aurora_consciousness.py
+grokx_consciousness.py
+
+# Auto-generated modules
+super_agi_modules/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+/tmp/
+temp/

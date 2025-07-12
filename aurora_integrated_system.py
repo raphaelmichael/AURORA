@@ -945,8 +945,12 @@ class AutonomyModule:
                 "Enhance pattern recognition algorithms",
                 "Optimize memory retrieval mechanisms"
             ])
+        
+        if not modifications:
+            return []
             
-        return random.sample(modifications, random.randint(0, 2))
+        num_modifications = min(random.randint(0, 2), len(modifications))
+        return random.sample(modifications, num_modifications) if num_modifications > 0 else []
     
     def _evolve_architecture(self, performance_metrics: Dict[str, float]) -> List[str]:
         """Evolves internal architecture based on performance"""

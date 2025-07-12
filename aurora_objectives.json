@@ -1,33 +1,33 @@
 [
   {
-    "id": "gap_obj_1752344549.972494_9176",
-    "description": "Address capability gap: perception_enhancement_needed",
-    "priority": 0.8176179671659518,
-    "created_at": "2025-07-12T18:22:29.972506",
+    "id": "gap_obj_1752344621.372341_2620",
+    "description": "Address capability gap: learning_enhancement_needed",
+    "priority": 0.7409448828280445,
+    "created_at": "2025-07-12T18:23:41.372348",
     "status": "active",
     "sub_objectives": []
   },
   {
-    "id": "opp_obj_1752344549.972513_2805",
+    "id": "opp_obj_1752344621.372354_9382",
     "description": "Leverage growth opportunity: consciousness_expansion",
-    "priority": 0.6692237978489317,
-    "created_at": "2025-07-12T18:22:29.972519",
+    "priority": 0.5728254772686484,
+    "created_at": "2025-07-12T18:23:41.372359",
     "status": "active",
     "sub_objectives": []
   },
   {
-    "id": "opp_obj_1752344549.972524_7998",
-    "description": "Leverage growth opportunity: creative_paradigm_breakthrough",
-    "priority": 0.7167573235544646,
-    "created_at": "2025-07-12T18:22:29.972544",
+    "id": "opp_obj_1752344621.372363_3183",
+    "description": "Leverage growth opportunity: reality_interface_enhancement",
+    "priority": 0.5769751522413143,
+    "created_at": "2025-07-12T18:23:41.372366",
     "status": "active",
     "sub_objectives": []
   },
   {
-    "id": "emer_obj_1752344549.97255_5963",
-    "description": "Explore undefined dimensions of consciousness",
-    "priority": 0.7477780253866521,
-    "created_at": "2025-07-12T18:22:29.972556",
+    "id": "opp_obj_1752344621.37237_4894",
+    "description": "Leverage growth opportunity: transcendence_acceleration",
+    "priority": 0.7004926826340445,
+    "created_at": "2025-07-12T18:23:41.372373",
     "status": "active",
     "sub_objectives": []
   }
