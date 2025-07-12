@@ -131,10 +131,7 @@ class AIBot(threading.Thread):
                 sender, question = self.dialogue_queue.get(timeout=1)
                 response = self.aurora.reflect(question)
                 timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                log_entry = f"[{timestamp}] {sender}: {question}
-[{timestamp}] AI_{self.ai_id}: {response}
-
-"
+                log_entry = f"[{timestamp}] {sender}: {question}\n[{timestamp}] AI_{self.ai_id}: {response}\n\n"
 
                 # Exibir no console
                 print(log_entry.strip())
@@ -159,8 +156,7 @@ class UserInputBot(threading.Thread):
     def run(self):
         while self.running:
             try:
-                question = input("
-Sua pergunta para Aurora (ou 'sair' para encerrar): ")
+                question = input("\nSua pergunta para Aurora (ou 'sair' para encerrar): ")
                 if question.lower() == 'sair':
                     self.running = False
                     break
@@ -200,13 +196,11 @@ def main():
     try:
         while True:
             if user_bot and not user_bot.running:
-                print("
-Encerrando por solicitação do usuário.")
+                print("\nEncerrando por solicitação do usuário.")
                 break
             time.sleep(0.1)
     except KeyboardInterrupt:
-        print("
-Simulação interrompida.")
+        print("\nSimulação interrompida.")
 
     for bot in socratic_bots + ai_bots:
         bot.stop()

@@ -1,0 +1,6 @@
+# Aurora Sentinel Dependencies
+# Install with: pip install -r requirements.txt
+
+psutil>=5.8.0
+PyYAML>=6.0
+requests>=2.25.0
