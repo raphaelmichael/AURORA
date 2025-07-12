@@ -1,0 +1,13 @@
+# Aurora Sentinel Requirements
+# Dependências mínimas para o sistema Aurora Sentinel
+
+# Configuração e serialização
+PyYAML>=6.0
+schedule>=1.2.0
+
+# Monitoramento de sistema
+psutil>=5.8.0
+
+# Desenvolvimento e testes (opcionais)
+pytest>=7.0.0
+pytest-cov>=4.0.0
