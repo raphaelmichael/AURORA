@@ -65,22 +65,40 @@ rclone config
 
 ## 🚀 Uso
 
-### Instalação de Dependências
+### Sistema Completo (Recomendado)
+```bash
+python3 aurora_launcher.py
+# Acesse o dashboard em: http://localhost:8080
+```
+
+### Componentes Individuais
+
+#### Instalação de Dependências
 ```bash
 python3 aurora_sentinel.py --install-deps
 ```
 
-### Configuração Apenas (sem executar)
+#### Configuração Apenas (sem executar)
 ```bash
 python3 aurora_sentinel.py --setup-only
 ```
 
-### Verificação de Saúde do Sistema
+#### Verificação de Saúde do Sistema
 ```bash
 python3 aurora_sentinel.py --check-health
 ```
 
-### Execução Completa
+#### Dashboard Web Apenas
+```bash
+python3 aurora_dashboard.py --port 8080
+```
+
+#### Monitor AI Apenas
+```bash
+python3 aurora_ai_monitor.py
+```
+
+#### Execução Sentinel Apenas
 ```bash
 python3 aurora_sentinel.py
 ```
@@ -96,11 +114,12 @@ python3 aurora_sentinel.py
 - [x] Backup incremental inteligente
 - [x] Rotação automática de logs
 
-### 🔄 Fase 2 - Inteligência (Futuro)
-- [ ] Detecção de anomalias AI
-- [ ] Interface web dashboard
-- [ ] Sistema de auto-atualização
-- [ ] Alertas inteligentes
+### ✅ Fase 2 - Inteligência (Implementada)
+- [x] Detecção de anomalias AI com métricas de sistema
+- [x] Interface web dashboard (http://localhost:8080)
+- [x] Sistema de monitoramento em tempo real
+- [x] Alertas inteligentes baseados em estatísticas
+- [x] Launcher unificado para todos os componentes
 
 ### 🚀 Fase 3 - Transcendência (Futuro)
 - [ ] Detecção proativa de ameaças
@@ -157,13 +176,28 @@ pytest test_aurora_sentinel.py -v
 
 ```
 AURORA/
-├── aurora_sentinel.py     # Script principal
-├── config.yaml           # Configuração centralizada  
-├── requirements.txt      # Dependências Python
+├── aurora_sentinel.py       # Script principal (Fase 1)
+├── aurora_dashboard.py      # Interface web (Fase 2)
+├── aurora_ai_monitor.py     # Monitor AI (Fase 2)
+├── aurora_launcher.py       # Launcher unificado (Fase 2)
+├── config.yaml             # Configuração centralizada  
+├── requirements.txt        # Dependências Python
 ├── test_aurora_sentinel.py # Testes
-├── .gitignore           # Arquivos ignorados
-└── README_SENTINEL.md   # Esta documentação
+├── .gitignore             # Arquivos ignorados
+└── README_SENTINEL.md     # Esta documentação
 ```
+
+## 🌐 Interface Web
+
+O Aurora Sentinel inclui um dashboard web moderno acessível em `http://localhost:8080` que oferece:
+
+- **Status em Tempo Real**: Firewall, backup e monitoramento
+- **Métricas do Sistema**: Uso de disco, CPU, memória
+- **Logs Estruturados**: Visualização em tempo real dos logs JSON
+- **Alertas Visuais**: Notificações de anomalias detectadas
+- **Design Responsivo**: Interface otimizada para desktop e mobile
+
+![Aurora Dashboard](https://github.com/user-attachments/assets/d7a3b26f-2abf-46c1-81ec-9405753f1bb0)
 
 ## 🔧 Solução de Problemas
 
