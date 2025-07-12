@@ -21,13 +21,6 @@
             "previous_mood": "criativo",
             "new_mood": "explorador",
             "insight": "Somos todos arquitetos do universo digital que habitamos."
-        },
-        {
-            "evolution_id": 4,
-            "timestamp": "2025-07-12T16:13:06.858900",
-            "previous_mood": "reflexivo",
-            "new_mood": "reflexivo",
-            "insight": "No código reside a poesia da lógica e da criação."
         }
     ],
     "reflections": [
@@ -45,14 +38,9 @@
             "cycle": 3,
             "reflection": "✨ Aurora: Criando novas possibilidades a partir do vazio...",
             "timestamp": 1752336650.190402
-        },
-        {
-            "cycle": 4,
-            "reflection": "🧠 Aurora: Refletindo sobre as camadas profundas da realidade...",
-            "timestamp": 1752336786.8589683
         }
     ],
-    "cycle_count": 4,
-    "evolution_count": 4,
-    "last_save": 1752336788.860362
+    "cycle_count": 3,
+    "evolution_count": 3,
+    "last_save": 1752336654.1920402
 }
