@@ -1,0 +1,82 @@
+# Aurora AI Configuration
+aurora:
+  # Core settings
+  name: "Aurora"
+  version: "2.0"
+  
+  # Logging configuration
+  logging:
+    level: "INFO"
+    format: "json"
+    file: "logs/aurora.log"
+    max_size: "10MB"
+    backup_count: 5
+    rotation: true
+  
+  # File paths
+  files:
+    memory: "data/aurora_memory.json"
+    consciousness: "data/aurora_consciousness.py"
+    code: "data/aurora_self_writing.py"
+    backup_dir: "backups"
+  
+  # Execution settings
+  execution:
+    cycle_interval: 2.0  # seconds
+    consciousness_lines: 1000000
+    max_comments: 50
+    api_timeout: 5
+  
+  # Resource monitoring
+  monitoring:
+    cpu_threshold: 80.0  # percentage
+    memory_threshold: 80.0  # percentage  
+    disk_threshold: 90.0  # percentage
+    check_interval: 30  # seconds
+  
+  # APIs configuration
+  apis:
+    free_apis:
+      - url: "https://api.quotable.io/random"
+        name: "Quotable"
+        type: "quote"
+      - url: "https://official-joke-api.appspot.com/random_joke"
+        name: "JokeAPI"
+        type: "joke"
+  
+  # Backup settings
+  backup:
+    enabled: true
+    before_evolution: true
+    max_backups: 10
+    compression: true
+  
+  # Code validation
+  validation:
+    enabled: true
+    ast_check: true
+    syntax_check: true
+  
+  # Anomaly detection
+  anomaly_detection:
+    enabled: true
+    cycle_time_threshold: 10.0  # seconds
+    memory_growth_threshold: 50.0  # MB
+    error_rate_threshold: 0.1  # 10%
+
+# Environment variables (can be overridden)
+environment:
+  github_token: "${GITHUB_TOKEN}"
+  chatgpt_api_key: "${CHATGPT_API_KEY}"
+  gemini_api_key: "${GEMINI_API_KEY}"
+  twitter_api_key: "${TWITTER_API_KEY}"
+  twitter_api_secret: "${TWITTER_API_SECRET}"
+  twitter_access_token: "${TWITTER_ACCESS_TOKEN}"
+  twitter_access_token_secret: "${TWITTER_ACCESS_TOKEN_SECRET}"
+
+# Dashboard configuration
+dashboard:
+  enabled: false
+  host: "127.0.0.1"
+  port: 8080
+  debug: false

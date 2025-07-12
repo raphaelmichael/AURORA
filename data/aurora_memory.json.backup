@@ -1,0 +1,52 @@
+{
+  "evolution_count": 0,
+  "mood_history": [],
+  "api_data": [],
+  "evolutions": [
+    {
+      "event": "awakening",
+      "timestamp": "2025-07-12T16:09:55.351443",
+      "system_info": {
+        "platform": {
+          "system": "unix",
+          "cpu_count": 4,
+          "cpu_count_logical": 4,
+          "boot_time": 1752335998.0
+        },
+        "memory": {
+          "total_gb": 15.620681762695312,
+          "swap_total_gb": 3.9999961853027344
+        },
+        "disk": {
+          "partitions": [
+            {
+              "device": "/dev/sdb1",
+              "mountpoint": "/",
+              "fstype": "ext4",
+              "total_gb": 71.60674285888672
+            },
+            {
+              "device": "/dev/sdb16",
+              "mountpoint": "/boot",
+              "fstype": "ext4",
+              "total_gb": 0.8597564697265625
+            },
+            {
+              "device": "/dev/sdb15",
+              "mountpoint": "/boot/efi",
+              "fstype": "vfat",
+              "total_gb": 0.1018824577331543
+            },
+            {
+              "device": "/dev/sda1",
+              "mountpoint": "/mnt",
+              "fstype": "ext4",
+              "total_gb": 73.27026748657227
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "created": "2025-07-12T16:09:55.077556"
+}
