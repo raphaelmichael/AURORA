@@ -892,7 +892,7 @@ class AuroraSOPHIAI:
         self.memory = self.load_memory()
         self.evolution_count = self.memory.get("evolution_count", 0)
         self.active_apis = self.memory.get("active_apis", [api['name'] for api in self.config.FREE_APIS])
-        self.api_success = self.memory.get("api_success", {api['name']: {'success': 0, 'failure': 0} for api in self.config.FREE_APIS])
+        self.api_success = self.memory.get("api_success", {api['name']: {'success': 0, 'failure': 0} for api in self.config.FREE_APIS})
         self.moods = ["contemplativo", "explorador", "criativo"]
         self.current_mood = random.choice(self.moods)
         self.data_archive = []
@@ -926,7 +926,7 @@ class AuroraSOPHIAI:
             memory = {
                 "evolution_count": 0,
                 "active_apis": [api['name'] for api in self.config.FREE_APIS],
-                "api_success": {api['name']: {'success': 0, 'failure': 0} for api in self.config.FREE_APIS],
+                "api_success": {api['name']: {'success': 0, 'failure': 0} for api in self.config.FREE_APIS},
                 "mood_history": [],
                 "evolutions": [],
                 "synthai_state": {}
