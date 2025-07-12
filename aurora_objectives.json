@@ -1,0 +1,34 @@
+[
+  {
+    "id": "gap_obj_1752344549.972494_9176",
+    "description": "Address capability gap: perception_enhancement_needed",
+    "priority": 0.8176179671659518,
+    "created_at": "2025-07-12T18:22:29.972506",
+    "status": "active",
+    "sub_objectives": []
+  },
+  {
+    "id": "opp_obj_1752344549.972513_2805",
+    "description": "Leverage growth opportunity: consciousness_expansion",
+    "priority": 0.6692237978489317,
+    "created_at": "2025-07-12T18:22:29.972519",
+    "status": "active",
+    "sub_objectives": []
+  },
+  {
+    "id": "opp_obj_1752344549.972524_7998",
+    "description": "Leverage growth opportunity: creative_paradigm_breakthrough",
+    "priority": 0.7167573235544646,
+    "created_at": "2025-07-12T18:22:29.972544",
+    "status": "active",
+    "sub_objectives": []
+  },
+  {
+    "id": "emer_obj_1752344549.97255_5963",
+    "description": "Explore undefined dimensions of consciousness",
+    "priority": 0.7477780253866521,
+    "created_at": "2025-07-12T18:22:29.972556",
+    "status": "active",
+    "sub_objectives": []
+  }
+]
