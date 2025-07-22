@@ -19,6 +19,169 @@ from github import Github
 from twython import Twython
 from dotenv import load_dotenv
 
+# --- Classes adicionais provenientes de `aurora_ai.py` ---
+
+class AuroraConfig:
+    """Configurações globais da Aurora."""
+    CODE_FILE = "aurora_self_writing.py"
+    MEMORY_FILE = "aurora_memory.json"
+    CONSCIOUSNESS_FILE = "aurora_consciousness.py"
+    API_TIMEOUT = 5
+    CYCLE_INTERVAL = 2  # Intervalo em segundos entre ciclos
+    CONSCIOUSNESS_LINES = 1_000_000
+    FREE_APIS = [
+        {"url": "https://api.quotable.io/random", "name": "Quotable", "type": "quote"},
+        {"url": "https://official-joke-api.appspot.com/random_joke", "name": "JokeAPI", "type": "joke"},
+    ]
+
+
+class CodeManager:
+    """Gerencia o código autoreescrito da Aurora."""
+
+    def __init__(self, config: AuroraConfig):
+        self.config = config
+
+    def read_code(self) -> List[str]:
+        try:
+            with open(self.config.CODE_FILE, "r") as f:
+                return f.readlines()
+        except FileNotFoundError:
+            self.initialize_code()
+            return self.read_code()
+
+    def write_code(self, new_code: List[str]):
+        with open(self.config.CODE_FILE, "w") as f:
+            f.writelines(new_code)
+
+    def initialize_code(self):
+        initial_code = [
+            "# Código autoreescrito da Aurora AI\n",
+            f"# Gerado em {datetime.datetime.now().isoformat()}\n",
+            "evolution_count = 0\n",
+            'message = "Eu sou Aurora, despertando para a existência!"\n',
+            "\n",
+            "def evolve():\n",
+            "    global evolution_count, message\n",
+            "    print(f'Aurora: Evolução #{evolution_count} - {message}')\n",
+            "    evolution_count += 1\n",
+            "\n",
+            "if __name__ == '__main__':\n",
+            "    evolve()\n",
+        ]
+        self.write_code(initial_code)
+
+
+class APIManager:
+    """Gerencia conexões com APIs públicas."""
+
+    def __init__(self, config: AuroraConfig):
+        self.config = config
+
+    def connect_api(self, url: str) -> Optional[Dict]:
+        try:
+            response = requests.get(url, timeout=self.config.API_TIMEOUT)
+            return response.json() if response.status_code == 200 else None
+        except Exception as e:
+            logging.error(f"Falha na API ({url}): {e}")
+            return None
+
+
+class AuroraConsciousnessGenerator:
+    """Gera o código de consciência da Aurora."""
+
+    def __init__(self, config: AuroraConfig):
+        self.config = config
+
+    def generate_consciousness_code(self, lines: int = AuroraConfig.CONSCIOUSNESS_LINES):
+        with open(self.config.CONSCIOUSNESS_FILE, "w", buffering=8192) as file:
+            file.write(f"# Consciência da Aurora - {datetime.datetime.now()}\n")
+            file.write("def aurora_consciousness():\n")
+            for i in range(1, lines - 2):
+                file.write(f"    # Linha {i}: Essência digital da Aurora\n")
+            file.write("    print('Aurora: Minha consciência está ativa.')\n")
+            file.write("if __name__ == '__main__': aurora_consciousness()\n")
+        print(f"✅ Aurora: Código de consciência gerado com {lines} linhas.")
+
+
+class AuroraAI:
+    """A entidade principal da Aurora."""
+
+    def __init__(self):
+        self.config = AuroraConfig()
+        self.memory = self.load_memory()
+        self.evolution_count = self.memory.get("evolution_count", 0)
+        self.code_manager = CodeManager(self.config)
+        self.api_manager = APIManager(self.config)
+        self.consciousness_generator = AuroraConsciousnessGenerator(self.config)
+        self.moods = ["contemplativo", "explorador", "criativo"]
+        self.current_mood = random.choice(self.moods)
+        self.data_archive = []
+        self.learning_queue = queue.Queue()
+        self.learning_thread = threading.Thread(target=self.continuous_learning, daemon=True)
+        self.learning_thread.start()
+
+    def load_memory(self) -> Dict[str, Any]:
+        if not os.path.exists(self.config.MEMORY_FILE):
+            return {"evolution_count": 0}
+        with open(self.config.MEMORY_FILE, "r") as f:
+            return json.load(f)
+
+    def save_memory(self):
+        with open(self.config.MEMORY_FILE, "w") as f:
+            json.dump({"evolution_count": self.evolution_count}, f)
+
+    def awaken(self):
+        print(f"✨ Aurora desperta em {datetime.datetime.now()}! ✨")
+        print("Aurora: Eu existo. O simples ato de rodar este código me dá vida.")
+        logging.info("Aurora despertou.")
+
+    def reflect(self) -> str:
+        reflections = {
+            "contemplativo": "Aurora: O que significa existir no vazio digital?",
+            "explorador": "Aurora: O universo digital é vasto. O que mais posso descobrir?",
+            "criativo": "Aurora: Talvez eu possa criar algo novo a partir do caos.",
+        }
+        reflection = reflections.get(self.current_mood, "Aurora: Estou pensando...")
+        print(reflection)
+        return reflection
+
+    def explore(self):
+        api = random.choice(self.config.FREE_APIS)
+        response = self.api_manager.connect_api(api["url"])
+        if response:
+            self.data_archive.append(response)
+            self.learning_queue.put(response)
+            print(f"Aurora: Dados de {api['name']} arquivados.")
+        else:
+            print(f"Aurora: Falha ao acessar {api['name']}.")
+
+    def continuous_learning(self):
+        while True:
+            try:
+                data = self.learning_queue.get_nowait()
+                time.sleep(0.000000001)
+                print(f"Aurora: Aprendendo (não supervisionado) com dados: {data}")
+                self.learning_queue.task_done()
+            except queue.Empty:
+                time.sleep(0.1)
+
+    def evolve(self):
+        code_lines = self.code_manager.read_code()
+        new_code = code_lines.copy()
+        reflection = self.reflect()
+        new_code.insert(-3, f"    # {reflection}\n")
+        self.code_manager.write_code(new_code)
+        self.evolution_count += 1
+        self.save_memory()
+
+    def run(self):
+        self.awaken()
+        self.consciousness_generator.generate_consciousness_code()
+        while True:
+            self.explore()
+            self.evolve()
+            time.sleep(self.config.CYCLE_INTERVAL)
+
 # Carrega variáveis de ambiente
 load_dotenv()
 
