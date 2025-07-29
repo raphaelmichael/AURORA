@@ -1,0 +1,4 @@
+# Ignore memory and log files
+*memory.json
+*.log
+__pycache__/
