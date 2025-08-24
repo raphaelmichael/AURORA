@@ -1,0 +1,24 @@
+allowed_file_extensions:
+- .py
+- .json
+- .txt
+- .log
+api_rate_limit: 0.5
+api_timeout: 5
+backup_cleanup_days: 7
+backup_enabled: true
+consciousness_file: aurora_consciousness.py
+cpu_threshold: 80.0
+disk_threshold: 90.0
+evolution_interval: 10.0
+input_max_length: 1000
+log_file: aurora.log
+log_format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+log_level: INFO
+max_evolution_cycles: null
+max_file_size_mb: 100.0
+memory_file: aurora_memory.json
+memory_threshold: 85.0
+monitoring_interval: 5.0
+name: Aurora
+version: 2.2.0
