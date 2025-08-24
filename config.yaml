@@ -1,0 +1,74 @@
+# Aurora Sentinel Configuration
+# Configuração do Sistema de Monitoramento AI Aurora
+
+# Sistema Core
+system:
+  name: "Aurora Sentinel"
+  version: "2.0"
+  debug: false
+  
+# Configurações de Logging
+logging:
+  level: "INFO"
+  format: "json"
+  file: "aurora_sentinel.log"
+  max_size_mb: 10
+  backup_count: 5
+  rotation: true
+
+# Configurações de Firewall
+firewall:
+  enabled: true
+  default_policy: "deny"
+  allowed_ports:
+    - 22    # SSH
+    - 80    # HTTP (se necessário)
+    - 443   # HTTPS (se necessário)
+  blocked_ports:
+    - 80    # HTTP (bloquear por padrão)
+    - 443   # HTTPS (bloquear por padrão)
+  log_attempts: true
+
+# Sistema de Backup
+backup:
+  enabled: true
+  provider: "rclone"
+  remote_name: "gdrive"
+  remote_path: "sentinel_backup"
+  schedule: "0 2 * * *"  # Daily at 2 AM
+  retain_days: 30
+  verify_integrity: true
+  
+# Monitoramento AI
+monitoring:
+  enabled: true
+  anomaly_detection: true
+  check_interval: 300  # seconds
+  alert_threshold: 0.8
+  auto_correction: false
+  
+# Alertas
+alerts:
+  email:
+    enabled: false
+    smtp_server: ""
+    smtp_port: 587
+    username: ""
+    password: ""
+    to_addresses: []
+  webhook:
+    enabled: false
+    url: ""
+    
+# Segurança
+security:
+  enable_threat_detection: true
+  quarantine_suspicious: false
+  scan_interval: 3600  # seconds
+  
+# Auto-atualização
+auto_update:
+  enabled: false
+  check_interval: 86400  # daily
+  backup_before_update: true
+  rollback_on_failure: true
